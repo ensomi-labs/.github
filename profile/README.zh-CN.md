@@ -9,6 +9,8 @@ ensomi 为谱师和玩家而生。它让音乐从“用来听的”变成“可�
 
 在 [ensomi.app](https://ensomi.app) 上，只用浏览器就能生成谱面（歌曲文件不会离开你的电脑）。玩过之后，欢迎 **[告诉我们手感如何](https://github.com/ensomi-labs/ensomi-model/issues/new?template=chart-feedback.yml)**。
 
+想把生成的谱面当游戏来玩，可以试试 macOS 和 iOS 上的 **[ensomi 应用](https://github.com/ensomi-labs/ensomi)**（目前需要用 Xcode 从源码构建）。欢迎在 [Issues](https://github.com/ensomi-labs/ensomi/issues) 里提想法、改进建议和 bug 报告。
+
 ## 源于社区，回馈社区
 
 ensomi 诞生于 osu!mania 社区。它的模型从谱师写的谱面中学习，它的键型词汇从谱师读谱的方式中学习。我们把所得作为公共资源回馈给社区：
@@ -29,10 +31,11 @@ ensomi 诞生于 osu!mania 社区。它的模型从谱师写的谱面中学习�
 | 玩过生成的谱面，或在编辑器里看过 | [谱面反馈](https://github.com/ensomi-labs/ensomi-model/issues/new?template=chart-feedback.yml)。一句话就够了；如果能附上截图或时间段、`.osu` 文件、歌名和模型名，会更有帮助。 |
 | 对写谱和开发工具（Inspector、渲染器、npm 包）的反馈 | beatmap-lens 的[工具反馈](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=tooling-feedback.yml) |
 | 公开数据集里的标注和你的理解不一样，或数据集有其他问题 | beatmap-lens 的[数据集反馈](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=dataset-feedback.yml) |
+| 对 ensomi 应用（macOS、iOS）的想法、改进建议或 bug | ensomi 的 [Issues](https://github.com/ensomi-labs/ensomi/issues) |
 | 希望 ensomi 做的东西、问题、用 ensomi 做的谱面 | [Discussions](https://github.com/orgs/ensomi-labs/discussions)（其他人可以补充，也可以投票支持） |
 | 想参与标注，或者写代码 | Discussions，或 [ensomi-model](https://github.com/ensomi-labs/ensomi-model/blob/main/CONTRIBUTING.md) 和 [beatmap-lens](https://github.com/ensomi-labs/beatmap-lens/blob/main/CONTRIBUTING.md) 的贡献指南 |
 
-请不要上传音频文件或 `.osz` 文件：歌曲受版权保护。写上歌名或附个链接就够了。
+请不要上传音频文件或 `.osz` 文件：歌曲受版权保护。写上歌名或附个链接就够了。每个仓库都欢迎通过 Issues 提出想法、改进建议和 bug 报告。
 
 中文、日文、英文都可以。每一份反馈我们都会认真阅读。被反馈的谱面会成为我们下一代模型的测试用例；用模型检验过之后，我们会在原反馈下回复结果。你的每一份贡献都会按你选择的名字署名。
 

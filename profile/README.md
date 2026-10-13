@@ -13,6 +13,11 @@ a chart for it, and leave the choices to people.
 song never leaves your computer), then
 **[tell us how it plays](https://github.com/ensomi-labs/ensomi-model/issues/new?template=chart-feedback.yml)**.
 
+To play generated charts as a game, try the **[ensomi app](https://github.com/ensomi-labs/ensomi)**
+for macOS and iOS; for now you build it from source with Xcode. Ideas,
+enhancements and bug reports for it are welcome as
+[issues](https://github.com/ensomi-labs/ensomi/issues).
+
 ## Born from the community, given back
 
 ensomi grew out of the osu!mania community. Its models learn from charts that
@@ -36,11 +41,13 @@ code, and a short or general report is welcome:
 | Played or looked at a generated chart | [Chart feedback](https://github.com/ensomi-labs/ensomi-model/issues/new?template=chart-feedback.yml). One sentence is enough; a screenshot or time range, the `.osu`, the song and the model help. |
 | Feedback on mapping or developer tools: the Inspector, the renderer, the npm package | [Tooling feedback](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=tooling-feedback.yml) in beatmap-lens |
 | A label that reads wrong to you, or another problem in the published dataset | [Dataset feedback](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=dataset-feedback.yml) in beatmap-lens |
+| An idea, an enhancement or a bug in the ensomi app (macOS, iOS) | [Issues](https://github.com/ensomi-labs/ensomi/issues) in ensomi |
 | An idea for what ensomi should build, a question, a chart you made with it | [Discussions](https://github.com/orgs/ensomi-labs/discussions), where others can add to it and upvote it |
 | A wish to annotate sections, or to write code | Discussions, or the contribution guides of [ensomi-model](https://github.com/ensomi-labs/ensomi-model/blob/main/CONTRIBUTING.md) and [beatmap-lens](https://github.com/ensomi-labs/beatmap-lens/blob/main/CONTRIBUTING.md) |
 
 Please attach no audio and no `.osz` files: songs are copyrighted. A song name
-or link is enough.
+or link is enough. Ideas, enhancements and bug reports are welcome as issues in
+any repository here.
 
 Write in English, 日本語 or 中文. We read every report. Reported charts become
 test cases for our next models, and each report gets a reply once a model has
