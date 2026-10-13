@@ -20,24 +20,30 @@ mappers made, and its pattern vocabulary from how mappers read them. We give
 that back as a public service:
 
 - **Open weights.** [Ensomi R2](https://huggingface.co/sed-i/ensomi-r2) (CC BY-NC-SA 4.0, no commercial use) and [R1](https://huggingface.co/sed-i/pulsefield-r1-restored) on Hugging Face.
-- **Open datasets.** The [mania pattern annotations](https://huggingface.co/datasets/sed-i/mania-pattern-annotations) (MIT), and the feedback you send us, published under CC BY 4.0 with your credit.
+- **Open datasets.** The [mania pattern annotations](https://huggingface.co/datasets/sed-i/mania-pattern-annotations) (MIT), and the chart and dataset feedback you send us, published under CC BY 4.0 with your credit.
+- **Open research.** Our results, decisions and working notes are public on [`relay-notes`](https://github.com/ensomi-labs/ensomi-model/blob/relay-notes/RESEARCH.md), beside reports such as the [R2 report](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_system.md).
 - **Open code.** Every repository here is open source.
 
 Human feedback decides both what we optimize and what we choose to build.
 
 ## Make it better with us
 
-What makes a good chart, mappers and players know best. None of these needs code:
+What makes a good chart, mappers and players know best. None of these needs
+code, and a short or general report is welcome:
 
 | You have | Where it goes |
 | --- | --- |
-| Played or read a generated chart | [Chart feedback](https://github.com/ensomi-labs/ensomi-model/issues/new?template=chart-feedback.yml): timestamps, what a mapper would do instead, what worked |
-| A pattern label in the dataset that reads wrong to you | [Label feedback](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=label-feedback.yml) |
+| Played or looked at a generated chart | [Chart feedback](https://github.com/ensomi-labs/ensomi-model/issues/new?template=chart-feedback.yml). One sentence is enough; a screenshot or time range, the `.osu`, the song and the model help. |
+| Feedback on mapping or developer tools: the Inspector, the renderer, the npm package | [Tooling feedback](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=tooling-feedback.yml) in beatmap-lens |
+| A label that reads wrong to you, or another problem in the published dataset | [Dataset feedback](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=dataset-feedback.yml) in beatmap-lens |
 | An idea for what ensomi should build, a question, a chart you made with it | [Discussions](https://github.com/orgs/ensomi-labs/discussions), where others can add to it and upvote it |
 | A wish to annotate sections, or to write code | Discussions, or the contribution guides of [ensomi-model](https://github.com/ensomi-labs/ensomi-model/blob/main/CONTRIBUTING.md) and [beatmap-lens](https://github.com/ensomi-labs/beatmap-lens/blob/main/CONTRIBUTING.md) |
 
+Please attach no audio and no `.osz` files: songs are copyrighted. A song name
+or link is enough.
+
 Write in English, 日本語 or 中文. We read every report. Reported charts become
-test cases for the next model, and each report gets a reply once that model has
+test cases for our next models, and each report gets a reply once a model has
 been checked against it. Everything you contribute is credited by the name you
 choose.
 
@@ -65,7 +71,7 @@ and the mapper keeps the structure, the expression and the decisions.
 Pick music you like, set what you want to practice, and get a chart built around that skill,
 instead of searching for a practice map that happens to fit.
 
-## Now: working hard on R3
+## Now: working hard on R3 and a bigger model
 
 **Ensomi R2** is out: a song in, a playable osu!mania 4K chart out in seconds,
 in your browser or on your own machine. Star rating and jumpstream and
@@ -73,16 +79,17 @@ chordstream requests work in blind screens; long notes are its main weakness,
 and the long-note control does not work yet.
 [What it can and cannot do](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_system.md).
 
-We are working hard on **R3**, a bigger model built for mappers. It aims for:
+We are working hard on two models:
 
-- timing that sits more precisely on the song, including offsets and tempo changes;
-- an arrangement that listens to the music, so that long notes and jacks follow the sound;
-- more precise control, starting with difficulty.
+- **R3**, the successor to R2, which takes on R2's weak points: notes placed
+  more precisely on the audio, long notes that follow the music, and
+  difficulty control.
+- **A bigger model, built for mappers**: better timing, a deeper understanding
+  of the music and more precise control. It optimizes for chart quality, not
+  generation speed, so it will take longer per song than R2's seconds.
 
-R3 is not optimized for generation speed. It will take longer than R2's seconds
-per song, in exchange for charts closer to what a mapper would make. There is no
-release date yet. The R2 charts you report now are among the cases R3 is
-checked against.
+Neither has a release date yet. The R2 charts you report now are among the
+cases both are checked against.
 
 ## What exists today
 
