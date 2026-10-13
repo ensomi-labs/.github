@@ -11,6 +11,9 @@ ensomi（えんそみ）は、マッパーとプレイヤーのためのプロ�
 [ensomi.app](https://ensomi.app) なら、ブラウザだけで譜面を生成できます（曲のファイルがパソコンの外に送られることはありません）。
 遊んでみたら、ぜひ **[感想を聞かせてください](https://github.com/ensomi-labs/ensomi-model/issues/new?template=chart-feedback.yml)**。
 
+ゲームとして遊ぶなら、macOS・iOS 向けの **[ensomi アプリ](https://github.com/ensomi-labs/ensomi)** もあります（いまはソースから Xcode でビルドします）。
+アイデア、改善の提案、バグ報告は [Issues](https://github.com/ensomi-labs/ensomi/issues) で歓迎しています。
+
 ## コミュニティから生まれ、コミュニティへ還す
 
 ensomi は osu!mania のコミュニティから生まれました。モデルはマッパーが作った譜面から学び、パターンの語彙はマッパーの譜面の読み方から学んでいます。
@@ -33,10 +36,12 @@ ensomi は osu!mania のコミュニティから生まれました。モデル�
 | 生成された譜面をプレイした、エディタで見た | [譜面フィードバック](https://github.com/ensomi-labs/ensomi-model/issues/new?template=chart-feedback.yml)。一言だけでも大丈夫です。スクリーンショットや時間範囲、`.osu`、曲名、モデル名があると助かります。 |
 | 譜面制作・開発向けのツール（Inspector、レンダラー、npm パッケージ）について | beatmap-lens の[ツールフィードバック](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=tooling-feedback.yml) |
 | 公開データセットのラベルが自分の解釈と違う、またはデータセットにほかの問題がある | beatmap-lens の[データセットフィードバック](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=dataset-feedback.yml) |
+| ensomi アプリ（macOS・iOS）へのアイデア、改善の提案、バグ報告 | ensomi の [Issues](https://github.com/ensomi-labs/ensomi/issues) |
 | ensomi に作ってほしいもののアイデア、質問、ensomi で作った譜面の紹介 | [Discussions](https://github.com/orgs/ensomi-labs/discussions)（ほかの人もコメントや投票ができます） |
 | アノテーションに参加したい、コードを書きたい | Discussions、または [ensomi-model](https://github.com/ensomi-labs/ensomi-model/blob/main/CONTRIBUTING.md) と [beatmap-lens](https://github.com/ensomi-labs/beatmap-lens/blob/main/CONTRIBUTING.md) のコントリビューションガイド |
 
 音声ファイルや `.osz` は添付しないでください。曲には著作権があります。曲名かリンクだけで十分です。
+どのリポジトリでも、アイデア、改善の提案、バグ報告を Issues で歓迎しています。
 
 日本語・英語・中国語、どれで書いても大丈夫です。いただいた報告にはすべて目を通します。
 報告された譜面は次のモデルを検証するテストケースになり、モデルで確認したら、元の報告に結果をお返事します。
