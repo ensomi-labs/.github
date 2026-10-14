@@ -24,10 +24,10 @@ ensomi grew out of the osu!mania community. Its models learn from charts that
 mappers made, and its pattern vocabulary from how mappers read them. We give
 that back as a public service:
 
-- **Open weights.** [Ensomi R2](https://huggingface.co/sed-i/ensomi-r2) (CC BY-NC-SA 4.0, no commercial use) and [R1](https://huggingface.co/sed-i/pulsefield-r1-restored) on Hugging Face.
+- **Open weights.** [Ensomi R2](https://huggingface.co/sed-i/ensomi-r2) (MIT) and [R1](https://huggingface.co/sed-i/pulsefield-r1-restored) on Hugging Face.
 - **Open datasets.** The [mania pattern annotations](https://huggingface.co/datasets/sed-i/mania-pattern-annotations) (MIT), and the chart and dataset feedback you send us, published under CC BY 4.0 with your credit.
-- **Open research.** Our results, decisions and working notes are public on [`relay-notes`](https://github.com/ensomi-labs/ensomi-model/blob/relay-notes/RESEARCH.md), beside reports such as the [R2 report](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_system.md).
-- **Open code.** Every repository here is open source.
+- **Open research.** Our reports are public, such as the [R2 report](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_system.md).
+- **Open code.** Our code is open source.
 
 Human feedback decides both what we optimize and what we choose to build.
 

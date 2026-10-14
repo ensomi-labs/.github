@@ -15,10 +15,10 @@ ensomi 为谱师和玩家而生。它让音乐从“用来听的”变成“可�
 
 ensomi 诞生于 osu!mania 社区。它的模型从谱师写的谱面中学习，它的键型词汇从谱师读谱的方式中学习。我们把所得作为公共资源回馈给社区：
 
-- **开放权重**：[Ensomi R2](https://huggingface.co/sed-i/ensomi-r2)（CC BY-NC-SA 4.0，禁止商用）和 [R1](https://huggingface.co/sed-i/pulsefield-r1-restored) 的模型权重已在 Hugging Face 公开。
+- **开放权重**：[Ensomi R2](https://huggingface.co/sed-i/ensomi-r2)（MIT）和 [R1](https://huggingface.co/sed-i/pulsefield-r1-restored) 的模型权重已在 Hugging Face 公开。
 - **开放数据集**：[键型标注数据集](https://huggingface.co/datasets/sed-i/mania-pattern-annotations)（MIT）；你发给我们的谱面反馈和数据集反馈，也会以 CC BY 4.0 协议公开，并按你选择的名字署名。
-- **开放研究**：我们的实验结果、决策和研究笔记都公开在 [`relay-notes`](https://github.com/ensomi-labs/ensomi-model/blob/relay-notes/RESEARCH.md) 分支上，另有 [R2 报告](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_system.md)等文档（英文）。
-- **开放源代码**：这里的每个仓库都是开源的。
+- **开放研究**：我们公开了 [R2 报告](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_system.md)等研究报告（英文）。
+- **开放源代码**：我们的代码是开源的。
 
 优化什么、开发什么，都以大家的反馈为依据。
 

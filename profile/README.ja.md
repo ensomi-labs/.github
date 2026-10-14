@@ -19,10 +19,10 @@ ensomi（えんそみ）は、マッパーとプレイヤーのためのプロ�
 ensomi は osu!mania のコミュニティから生まれました。モデルはマッパーが作った譜面から学び、パターンの語彙はマッパーの譜面の読み方から学んでいます。
 そうして得たものは、誰もが使える公共の資源としてお返しします。
 
-- **オープンウェイト**：[Ensomi R2](https://huggingface.co/sed-i/ensomi-r2)（CC BY-NC-SA 4.0、商用利用不可）と [R1](https://huggingface.co/sed-i/pulsefield-r1-restored) のモデルの重みを Hugging Face で公開しています。
+- **オープンウェイト**：[Ensomi R2](https://huggingface.co/sed-i/ensomi-r2)（MIT）と [R1](https://huggingface.co/sed-i/pulsefield-r1-restored) のモデルの重みを Hugging Face で公開しています。
 - **オープンデータセット**：[譜面パターンのアノテーション](https://huggingface.co/datasets/sed-i/mania-pattern-annotations)（MIT）。みなさんから届いた譜面とデータセットへのフィードバックも、お名前のクレジット付きで CC BY 4.0 のもとに公開します。
-- **オープンリサーチ**：研究の結果、判断、作業ノートは [`relay-notes`](https://github.com/ensomi-labs/ensomi-model/blob/relay-notes/RESEARCH.md) ブランチで、[R2 レポート](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_system.md)などとともに公開しています（英語）。
-- **オープンソース**：ここにあるリポジトリはすべてオープンソースです。
+- **オープンリサーチ**：[R2 レポート](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_system.md)などの研究レポートを公開しています（英語）。
+- **オープンソース**：私たちのコードはオープンソースです。
 
 何を良くするか、何を作るか。どちらも、みなさんの声をもとに決めます。
 
