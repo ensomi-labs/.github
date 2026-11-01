@@ -5,9 +5,11 @@
 
 English · [日本語](https://github.com/ensomi-labs/.github/blob/main/profile/README.ja.md) · [简体中文](https://github.com/ensomi-labs/.github/blob/main/profile/README.zh-CN.md)
 
-ensomi is for mappers and players. It turns music from something you listen to
-into something you take part in: start from whatever music is playing, generate
-a chart for it, and leave the choices to people.
+ensomi is open research at the frontier of music and play, for mappers, players
+and everyone who builds on music. We are teaching models to understand music and
+turning it from something you listen to into something you take part in: start
+from whatever music is playing, generate a chart for it, and leave the choices
+to people.
 
 **[Generate a chart at ensomi.app](https://ensomi.app)**, in your browser (the
 song never leaves your computer), then
@@ -17,6 +19,74 @@ To play generated charts as a game, try the **[ensomi app](https://github.com/en
 for macOS and iOS; for now you build it from source with Xcode. Ideas,
 enhancements and bug reports for it are welcome as
 [issues](https://github.com/ensomi-labs/ensomi/issues).
+
+## Our mission
+
+Turn music understanding and rhythm-game creation into open tools that players,
+mappers and developers actually use, until listening to music, playing it and
+creating with it become one activity.
+
+We picture a future where music is understood well, and where people can play
+the music they love the way they want. Mappers draft with ensomi and keep the
+structure, the expression and the decisions. Players play their own music at
+the level and in the style they choose. An open vocabulary, built and corrected
+by mappers, says what a chart does. We get there together: each report, label
+and pull request makes the next model and the next dataset better.
+
+Four frontiers guide the work:
+
+**01 · Play the music around you** · *working demo on macOS*
+At a party, the music is already on. Open ensomi; it recognizes the song, finds where it is
+in the track, and plays a chart generated for it. The music never stops.
+
+**02 · Open music understanding** · *in research*
+Drop in a song and ensomi proposes its beats and tempo, even where the meter shifts or the pulse
+is hard to read. Where your ear disagrees, mark what you hear, and the timing is worked out again
+around that mark. Open by design, so open DAW tools, games and tools nobody has imagined yet can
+build on the same understanding of music.
+
+**03 · Your music, your practice** · *concept*
+Pick music you like, set what you want to practice, and get a chart built around that skill,
+instead of searching for a practice map that happens to fit.
+
+**04 · Playing together** · *concept*
+Like clearing lines in versus Tetris, a clean passage or a long combo drops an attack into what
+your opponent is about to play. In co-op you coordinate instead, and what one of you plays shapes
+the other's chart.
+
+## Next: N1, R3
+
+**Ensomi R2** is out: a song in, a playable osu!mania 4K chart out in seconds,
+in your browser or on your own machine. Star rating and jumpstream and
+chordstream requests work in blind screens; long notes are its main weakness,
+and the long-note control does not work yet.
+[What it can and cannot do](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_system.md).
+
+We are working hard on what comes next:
+
+- **N1, open music understanding**: our model for understanding music. It starts
+  with timing: beats, tempo changes, offsets and the passages that need a second
+  look. The first mapper tool is simple: audio in, an `.osu` with its red lines
+  in place out. Where it is wrong, you mark what you hear and the model
+  recomputes the timing around that mark. We are also testing whether it can
+  work out how a song is put together (its pulse, attacks, odd meters and
+  layers) rather than only drawing a grid. We judge it on hard music, such as
+  tempo changes, free tempo and beats you can read more than one way, by how
+  much work a person still has to do as well as by timing error.
+- **R3**, the successor to R2, takes its timing from N1 and goes after R2's weak
+  points: notes placed more precisely on the audio, long notes that follow the
+  music, and difficulty control. It is also meant to generate in real time.
+- **A bigger model, built for mappers**: better timing, a deeper understanding
+  of the music and more precise control. It optimizes for chart quality, not
+  generation speed, so it will take longer per song than R2's seconds.
+
+**Where this stands.** N1 is in research: nothing is released yet, which hints
+work best is still an open question, and we will publish where it fails as well
+as where it helps. We plan it as open infrastructure for rhythm-game charting and
+open DAW tools: MIT-licensed, code included. Each public release gets its own
+review of the data behind it, so results, code and weights may not arrive
+together. None of these models has a release date yet. The R2 charts you report
+now are among the cases they are checked against.
 
 ## Born from the community, given back
 
@@ -53,50 +123,6 @@ Write in English, 日本語 or 中文. We read every report. Reported charts bec
 test cases for our next models, and each report gets a reply once a model has
 been checked against it. Everything you contribute is credited by the name you
 choose.
-
-## Where we are going
-
-We picture a future where music is understood well, and where people can play
-the music they love the way they want. Mappers draft with ensomi and keep the
-structure, the expression and the decisions. Players play their own music at
-the level and in the style they choose. An open vocabulary, built and corrected
-by mappers, says what a chart does. We get there together: each report, label
-and pull request makes the next model and the next dataset better.
-
-Three scenarios guide the work:
-
-**01 · Play the music around you** · *working demo on macOS*
-At a party, the music is already on. Open ensomi; it recognizes the song, finds where it is
-in the track, and plays a chart generated for it. The music never stops.
-
-**02 · Mapping without the repetition** · *experimental*
-Select one section and ask for candidate choreography. Compare the candidates, retry, keep one
-or undo it, while the rest of the chart stays visible. The tool does the repetitive drafting,
-and the mapper keeps the structure, the expression and the decisions.
-
-**03 · Your music, your practice** · *concept*
-Pick music you like, set what you want to practice, and get a chart built around that skill,
-instead of searching for a practice map that happens to fit.
-
-## Now: working hard on R3 and a bigger model
-
-**Ensomi R2** is out: a song in, a playable osu!mania 4K chart out in seconds,
-in your browser or on your own machine. Star rating and jumpstream and
-chordstream requests work in blind screens; long notes are its main weakness,
-and the long-note control does not work yet.
-[What it can and cannot do](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_system.md).
-
-We are working hard on two models:
-
-- **R3**, the successor to R2, which takes on R2's weak points: notes placed
-  more precisely on the audio, long notes that follow the music, and
-  difficulty control.
-- **A bigger model, built for mappers**: better timing, a deeper understanding
-  of the music and more precise control. It optimizes for chart quality, not
-  generation speed, so it will take longer per song than R2's seconds.
-
-Neither has a release date yet. The R2 charts you report now are among the
-cases both are checked against.
 
 ## What exists today
 
