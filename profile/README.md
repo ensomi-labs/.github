@@ -49,7 +49,7 @@ build on the same understanding of music.
 Pick music you like, set what you want to practice, and get a chart built around that skill,
 instead of searching for a practice map that happens to fit.
 
-**04 · Playing together** · *concept*
+**04 · New forms of 4K multiplayer** · *concept*
 Like clearing lines in versus Tetris, a clean passage or a long combo drops an attack into what
 your opponent is about to play. In co-op you coordinate instead, and what one of you plays shapes
 the other's chart.
