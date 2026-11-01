@@ -11,7 +11,7 @@ ensomi（えんそみ）は、音楽と遊びのフロンティアを探求す�
 [ensomi.app](https://ensomi.app) なら、ブラウザだけで譜面を生成できます（曲のファイルがパソコンの外に送られることはありません）。
 遊んでみたら、ぜひ **[感想を聞かせてください](https://github.com/ensomi-labs/ensomi-model/issues/new?template=chart-feedback.yml)**。
 
-ゲームとして遊ぶなら、macOS・iOS 向けの **[ensomi アプリ](https://github.com/ensomi-labs/ensomi)** もあります（いまはソースから Xcode でビルドします）。
+ゲームとして遊ぶなら、**[ensomi アプリ](https://github.com/ensomi-labs/ensomi)** もあります。インストールできる初期の [Android デモ](https://github.com/ensomi-labs/ensomi/releases)と、ソースから Xcode でビルドする [macOS・iOS 版](https://github.com/ensomi-labs/ensomi/tree/dev/swift)です。
 アイデア、改善の提案、バグ報告は [Issues](https://github.com/ensomi-labs/ensomi/issues) で歓迎しています。
 
 ## 私たちのミッション
@@ -26,7 +26,7 @@ ensomi（えんそみ）は、音楽と遊びのフロンティアを探求す�
 
 開発の道しるべは、四つのフロンティアです。
 
-**01 · 身の回りの音楽で遊ぶ** · *macOS で動くデモあり*
+**01 · 身の回りの音楽で遊ぶ** · *macOS で動くデモあり、Android は初期プレリリース*
 パーティーでは、もう音楽が流れています。ensomi を開けば、曲を認識して再生位置を見つけ、その曲のために生成した譜面で遊べます。音楽は止まりません。
 
 **02 · オープンな音楽理解** · *研究中*
@@ -48,11 +48,30 @@ ensomi（えんそみ）は、音楽と遊びのフロンティアを探求す�
 
 いま、その次に全力で取り組んでいます。
 
-- **N1（オープンな音楽理解）**：音楽を理解するモデルです。まずはタイミングから。ビート、テンポの変化、オフセット、確認が必要な箇所の指摘に取り組みます。最初のマッパー向けツールはシンプルで、音声を入れると赤線の入った `.osu` が返ってきます。間違っているところは、聴こえたとおりに印をつければ、モデルがその前後のタイミングを計算し直します。グリッドを引くだけでなく、パルス、アタック、変拍子、レイヤーといった曲の組み立てを読み解けるかどうかも検証しています。評価の対象は、テンポの変化、自由なテンポ、複数の取り方ができるビートといった難しい音楽です。タイミングの誤差だけでなく、人にどれだけ作業が残るかでも評価します。
-- **R3**：R2 の後継モデルです。タイミングは N1 から受け取り、R2 の弱点である、音に対するノーツのタイミングの精度、音楽に沿ったロングノーツ、難易度のコントロールに取り組みます。リアルタイムでの生成も目指します。
-- **より大きなモデル（マッパー向け）**：タイミングの精度、音楽の理解、コントロールの精密さをさらに高めます。生成速度より譜面の質を優先するため、R2 のように数秒では終わりません。
+### N1：オープンな音楽理解
 
-**現在の状況**：N1 は研究段階で、まだ何も公開していません。どのヒントが最も有効かも未解決の問いです。うまくいく範囲だけでなく、失敗する範囲も公開します。リズムゲームの譜面制作とオープンな DAW ツールのためのオープンな基盤として、コードも含めて MIT ライセンスを予定しています。公開物ごとに元になるデータを個別に審査するため、結果、コード、重みは同時に公開されるとは限りません。どのモデルも公開日は未定です。いま R2 の譜面について送っていただく報告は、これらのモデルを確かめるテストケースになります。
+最初のノーツの前に、すべてのビートを見つける作業があります。地道で時間のかかる作業なのに、テンポの変化や変拍子、拍の取りにくい曲になると、いまのツールは頼りになりません。N1 は、音楽を本当に聴き取るために開発しているモデルです。まずはタイミングから始めます。
+
+- **テンポマップから始める**：曲を入れると、赤線の入った `.osu` が返ってきます。
+- **耳で直す**：聴こえたところに印をつければ、N1 がその前後のタイミングを計算し直します。ほかの部分はそのままです。
+- **音楽の組み立てを聴き取る**：グリッドを引くだけでなく、パルス、アタック、変拍子、レイヤーといった曲の組み立てを読み解けるかどうかを検証しています。
+- **その上につくる**：リズムゲームの譜面制作とオープンな DAW ツールのためのオープンな基盤です。コードも含めて MIT ライセンスです。
+
+### R3：音を聴く譜面
+
+R2 は曲を聴かずに配置を決めています。そのためロングノーツが音楽から離れ、指定より易しく、あるいは難しい譜面になることがあります。R3 は、R2 が教えてくれた課題を解決する次の譜面システムです。
+
+- **音楽についていくノーツ**：N1 のタイミングでノーツを聴こえる音の上に置き、配置も音を聴くことで、ロングノーツが曲に沿います。
+- **信頼できる難易度**：★を指定すれば、その★の譜面が返ってきます。
+- **リアルタイム**：音楽が流れるそばから譜面を生成し、身の回りの音楽を遊べるものにします。
+
+**より大きなモデル（マッパー向け）** の開発にも取り組んでいます。タイミングの精度、音楽の理解、コントロールの精密さをさらに高めます。生成速度より譜面の質を優先するため、R2 のように数秒では終わりません。
+
+### 現在の状況
+
+- **N1 は研究段階です。** 難しい音楽を対象に、タイミングの誤差だけでなく、人にどれだけ作業が残るかでも評価し、うまくいく範囲だけでなく失敗する範囲も明らかにします。まだリリースしたものはなく、どのヒントが最も有効かも未解決の問いです。
+- **公開物ごとに、元になるデータを個別に審査します。** そのため、結果、コード、重みは同時に公開されるとは限りません。
+- **どのモデルも公開日は未定です。** いま R2 の譜面について送っていただく報告は、これらのモデルを確かめるテストケースになります。
 
 ## コミュニティから生まれ、コミュニティへ還す
 
@@ -61,7 +80,7 @@ ensomi は osu!mania のコミュニティから生まれました。モデル�
 
 - **オープンウェイト**：[Ensomi R2](https://huggingface.co/sed-i/ensomi-r2)（MIT）と [R1](https://huggingface.co/sed-i/pulsefield-r1-restored) のモデルの重みを Hugging Face で公開しています。
 - **オープンデータセット**：[譜面パターンのアノテーション](https://huggingface.co/datasets/sed-i/mania-pattern-annotations)（MIT）。みなさんから届いた譜面とデータセットへのフィードバックも、お名前のクレジット付きで CC BY 4.0 のもとに公開します。
-- **オープンリサーチ**：[R2 レポート](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_system.md)などの研究レポートを公開しています（英語）。
+- **オープンリサーチ**：[R2 レポート](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_system.md)や[データの出所](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_data_provenance.md)などの研究レポートを公開しています（英語）。
 - **オープンソース**：私たちのコードはオープンソースです。
 
 何を良くするか、何を作るか。どちらも、みなさんの声をもとに決めます。
@@ -76,7 +95,7 @@ ensomi は osu!mania のコミュニティから生まれました。モデル�
 | 生成された譜面をプレイした、エディタで見た | [譜面フィードバック](https://github.com/ensomi-labs/ensomi-model/issues/new?template=chart-feedback.yml)。一言だけでも大丈夫です。スクリーンショットや時間範囲、`.osu`、曲名、モデル名があると助かります。 |
 | 譜面制作・開発向けのツール（Inspector、レンダラー、npm パッケージ）について | beatmap-lens の[ツールフィードバック](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=tooling-feedback.yml) |
 | 公開データセットのラベルが自分の解釈と違う、またはデータセットにほかの問題がある | beatmap-lens の[データセットフィードバック](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=dataset-feedback.yml) |
-| ensomi アプリ（macOS・iOS）へのアイデア、改善の提案、バグ報告 | ensomi の [Issues](https://github.com/ensomi-labs/ensomi/issues) |
+| ensomi アプリ（Android・macOS・iOS）へのアイデア、改善の提案、バグ報告 | ensomi の [Issues](https://github.com/ensomi-labs/ensomi/issues) |
 | ensomi に作ってほしいもののアイデア、質問、ensomi で作った譜面の紹介 | [Discussions](https://github.com/orgs/ensomi-labs/discussions)（ほかの人もコメントや投票ができます） |
 | アノテーションに参加したい、コードを書きたい | Discussions、または [ensomi-model](https://github.com/ensomi-labs/ensomi-model/blob/main/CONTRIBUTING.md) と [beatmap-lens](https://github.com/ensomi-labs/beatmap-lens/blob/main/CONTRIBUTING.md) のコントリビューションガイド |
 
@@ -93,7 +112,7 @@ ensomi は osu!mania のコミュニティから生まれました。モデル�
 | --- | --- |
 | [**ensomi-model**](https://github.com/ensomi-labs/ensomi-model) | モデル本体。**Ensomi R2** では、タイミングシステムがビートグリッドを合わせ、行モデル（rows model）がノーツを置くタイミングを決め、R2 がレーン・通常ノーツ・ロングノーツを配置して、曲全体でひとつのキャラクターを保ちます。[レポート](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_system.md) · [重み](https://huggingface.co/sed-i/ensomi-r2)（[ONNX 版](https://huggingface.co/sed-i/ensomi-r2/tree/main/onnx)もあり）。譜面の続きを生成する以前のモデル R1 も[公開しています](https://huggingface.co/sed-i/pulsefield-r1-restored)。 |
 | [**ensomi-web**](https://github.com/ensomi-labs/ensomi-web) | [ensomi.app](https://ensomi.app)：ブラウザで動く R2。osu! に持っていく前に、曲に合わせて譜面の流れを確認できるプレイヤー付きです。 |
-| [**ensomi**](https://github.com/ensomi-labs/ensomi) | macOS・iOS 向けのゲームクライアント。*Generate a Chart* では、手元にある曲から R2 で譜面を生成して遊べます。*Listen & Play* では、聞こえてきた曲を認識し、同期をとって、生成した譜面で遊べます。 |
+| [**ensomi**](https://github.com/ensomi-labs/ensomi) | ゲームクライアント。**Android** は初期の[プレリリース](https://github.com/ensomi-labs/ensomi/releases)で、曲を入れて遊べるほか、*Listen & Play* では音楽アプリで曲を認識すると、ensomi が聞こえた位置から合流します。**macOS・iOS**（[`dev/swift`](https://github.com/ensomi-labs/ensomi/tree/dev/swift)）では、*Generate a Chart* で、手元にある曲から R2 で譜面を生成して遊べます。*Listen & Play* では、聞こえてきた曲を認識し、同期をとって、生成した譜面で遊べます。 |
 | [**runtime**](https://github.com/ensomi-labs/runtime) | すべてのクライアントが共有する、Rust 製の ensomi のコア。ゲームプレイのルール、譜面の読み込み、譜面生成を担います。Swift と npm のパッケージがあります。 |
 | [**sonalign**](https://github.com/ensomi-labs/sonalign) | 同期エンジン。ノイズの多いマイク入力やシステム音声から、既知の曲の再生位置を見つけて追従します。Rust 製で、C と Swift の API があります（[crates.io](https://crates.io/crates/sonalign)）。 |
 | [**beatmap-lens**](https://github.com/ensomi-labs/beatmap-lens) | マッパーと同じ目線で osu!mania の譜面を読むためのツール群。専門家の判断で調整した譜面パターンの語彙 **Foundation concepts**、人の判断と監査済みのエージェントの判断からなるオープンな **[データセット](https://huggingface.co/datasets/sed-i/mania-pattern-annotations)**（今後のスタイル指定の教師データになります）、譜面そのものを根拠として引用する **エージェントハーネス**、音声と一緒に譜面を確認できる **Inspector**、`.osu`・`.osz` を SVG・WebP・GIF に描画する **レンダラー**（[npm](https://www.npmjs.com/package/beatmap-lens)）。 |
