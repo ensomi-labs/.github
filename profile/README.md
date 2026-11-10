@@ -15,12 +15,12 @@ choices to people.
 song never leaves your computer), then
 **[tell us how it plays](https://github.com/ensomi-labs/ensomi-model/issues/new?template=chart-feedback.yml)**.
 
-To play generated charts as a game, try the **[ensomi app](https://github.com/ensomi-labs/ensomi)**:
-an early [Android demo](https://github.com/ensomi-labs/ensomi/releases) you can install,
-or the [macOS and iOS app](https://github.com/ensomi-labs/ensomi/tree/dev/swift),
+To play generated charts as a game, try the **[ensomi app](https://github.com/ensomi-labs/ensomi-app)**:
+an early [Android demo](https://github.com/ensomi-labs/ensomi-app/releases) you can install,
+or the [macOS and iOS app](https://github.com/ensomi-labs/ensomi-app/tree/dev/swift),
 which you build from source with Xcode. Ideas, enhancements and bug reports for
 it are welcome as
-[issues](https://github.com/ensomi-labs/ensomi/issues).
+[issues](https://github.com/ensomi-labs/ensomi-app/issues).
 
 ## Our mission
 
@@ -133,7 +133,7 @@ code, and a short or general report is welcome:
 | Played or looked at a generated chart | [Chart feedback](https://github.com/ensomi-labs/ensomi-model/issues/new?template=chart-feedback.yml). One sentence is enough; a screenshot or time range, the `.osu`, the song and the model help. |
 | Feedback on mapping or developer tools: the Inspector, the renderer, the npm package | [Tooling feedback](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=tooling-feedback.yml) in beatmap-lens |
 | A label that reads wrong to you, or another problem in the published dataset | [Dataset feedback](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=dataset-feedback.yml) in beatmap-lens |
-| An idea, an enhancement or a bug in the ensomi app (Android, macOS, iOS) | [Issues](https://github.com/ensomi-labs/ensomi/issues) in ensomi |
+| An idea, an enhancement or a bug in the ensomi app (Android, macOS, iOS) | [Issues](https://github.com/ensomi-labs/ensomi-app/issues) in ensomi-app |
 | An idea for what ensomi should build, a question, a chart you made with it | [Discussions](https://github.com/orgs/ensomi-labs/discussions), where others can add to it and upvote it |
 | A wish to annotate sections, or to write code | Discussions, or the contribution guides of [ensomi-model](https://github.com/ensomi-labs/ensomi-model/blob/main/CONTRIBUTING.md) and [beatmap-lens](https://github.com/ensomi-labs/beatmap-lens/blob/main/CONTRIBUTING.md) |
 
@@ -152,7 +152,7 @@ choose.
 | --- | --- |
 | [**ensomi-model**](https://github.com/ensomi-labs/ensomi-model) | The models. **Ensomi R2**: a timing system fits the beat grid, a rows model decides where notes start, and R2 arranges lanes, taps and long notes, holding one character through the song. [Report](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_system.md) · [weights](https://huggingface.co/sed-i/ensomi-r2), also as [ONNX graphs](https://huggingface.co/sed-i/ensomi-r2/tree/main/onnx). The earlier continuation model R1 is [also open](https://huggingface.co/sed-i/pulsefield-r1-restored). |
 | [**ensomi-web**](https://github.com/ensomi-labs/ensomi-web) | [ensomi.app](https://ensomi.app): R2 running in your browser, with a player to watch the chart against the song before you take it into osu!. |
-| [**ensomi**](https://github.com/ensomi-labs/ensomi) | Gameplay clients. On **Android**, an early [prerelease](https://github.com/ensomi-labs/ensomi/releases): drop in a song and play, or use *Listen & Play*, where you recognize the song in a music app and ensomi joins at the position it hears. On **macOS and iOS** ([`dev/swift`](https://github.com/ensomi-labs/ensomi/tree/dev/swift)): *Generate a Chart* plays an R2 chart for a song on your disk; *Listen & Play* goes from hearing a song to recognizing it, locking sync and playing a generated chart. |
+| [**ensomi-app**](https://github.com/ensomi-labs/ensomi-app) | Gameplay clients. On **Android**, an early [prerelease](https://github.com/ensomi-labs/ensomi-app/releases): drop in a song and play, or use *Listen & Play*, where you recognize the song in a music app and ensomi joins at the position it hears. On **macOS and iOS** ([`dev/swift`](https://github.com/ensomi-labs/ensomi-app/tree/dev/swift)): *Generate a Chart* plays an R2 chart for a song on your disk; *Listen & Play* goes from hearing a song to recognizing it, locking sync and playing a generated chart. |
 | [**runtime**](https://github.com/ensomi-labs/runtime) | ensomi's shared core in Rust: gameplay rules, chart sources and the chart generator, for every client, with Swift and npm packages. |
 | [**sonalign**](https://github.com/ensomi-labs/sonalign) | Sync engine. It finds and tracks the playing position in a known track from a noisy microphone or system-audio stream. Rust, with C and Swift APIs ([crates.io](https://crates.io/crates/sonalign)). |
 | [**beatmap-lens**](https://github.com/ensomi-labs/beatmap-lens) | Tools for reading osu!mania charts the way mappers do: **Foundation concepts**, an expert-calibrated pattern vocabulary; an open **[dataset](https://huggingface.co/datasets/sed-i/mania-pattern-annotations)** of human and audited agent judgments, which supplies the style supervision for future controls; an **agent harness** whose annotations cite the chart as evidence; an **Inspector** for reviewing charts with their audio; and a **renderer** that turns `.osu` and `.osz` input into SVG, WebP or GIF ([npm](https://www.npmjs.com/package/beatmap-lens)). |

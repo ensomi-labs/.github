@@ -11,8 +11,8 @@ ensomi（えんそみ）は、音楽と遊びのフロンティアを探求す�
 [ensomi.app](https://ensomi.app) なら、ブラウザだけで譜面を生成できます（曲のファイルがパソコンの外に送られることはありません）。
 遊んでみたら、ぜひ **[感想を聞かせてください](https://github.com/ensomi-labs/ensomi-model/issues/new?template=chart-feedback.yml)**。
 
-ゲームとして遊ぶなら、**[ensomi アプリ](https://github.com/ensomi-labs/ensomi)** もあります。インストールできる初期の [Android デモ](https://github.com/ensomi-labs/ensomi/releases)と、ソースから Xcode でビルドする [macOS・iOS 版](https://github.com/ensomi-labs/ensomi/tree/dev/swift)です。
-アイデア、改善の提案、バグ報告は [Issues](https://github.com/ensomi-labs/ensomi/issues) で歓迎しています。
+ゲームとして遊ぶなら、**[ensomi アプリ](https://github.com/ensomi-labs/ensomi-app)** もあります。インストールできる初期の [Android デモ](https://github.com/ensomi-labs/ensomi-app/releases)と、ソースから Xcode でビルドする [macOS・iOS 版](https://github.com/ensomi-labs/ensomi-app/tree/dev/swift)です。
+アイデア、改善の提案、バグ報告は [Issues](https://github.com/ensomi-labs/ensomi-app/issues) で歓迎しています。
 
 ## 私たちのミッション
 
@@ -95,7 +95,7 @@ ensomi は osu!mania のコミュニティから生まれました。モデル�
 | 生成された譜面をプレイした、エディタで見た | [譜面フィードバック](https://github.com/ensomi-labs/ensomi-model/issues/new?template=chart-feedback.yml)。一言だけでも大丈夫です。スクリーンショットや時間範囲、`.osu`、曲名、モデル名があると助かります。 |
 | 譜面制作・開発向けのツール（Inspector、レンダラー、npm パッケージ）について | beatmap-lens の[ツールフィードバック](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=tooling-feedback.yml) |
 | 公開データセットのラベルが自分の解釈と違う、またはデータセットにほかの問題がある | beatmap-lens の[データセットフィードバック](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=dataset-feedback.yml) |
-| ensomi アプリ（Android・macOS・iOS）へのアイデア、改善の提案、バグ報告 | ensomi の [Issues](https://github.com/ensomi-labs/ensomi/issues) |
+| ensomi アプリ（Android・macOS・iOS）へのアイデア、改善の提案、バグ報告 | ensomi-app の [Issues](https://github.com/ensomi-labs/ensomi-app/issues) |
 | ensomi に作ってほしいもののアイデア、質問、ensomi で作った譜面の紹介 | [Discussions](https://github.com/orgs/ensomi-labs/discussions)（ほかの人もコメントや投票ができます） |
 | アノテーションに参加したい、コードを書きたい | Discussions、または [ensomi-model](https://github.com/ensomi-labs/ensomi-model/blob/main/CONTRIBUTING.md) と [beatmap-lens](https://github.com/ensomi-labs/beatmap-lens/blob/main/CONTRIBUTING.md) のコントリビューションガイド |
 
@@ -112,7 +112,7 @@ ensomi は osu!mania のコミュニティから生まれました。モデル�
 | --- | --- |
 | [**ensomi-model**](https://github.com/ensomi-labs/ensomi-model) | モデル本体。**Ensomi R2** では、タイミングシステムがビートグリッドを合わせ、行モデル（rows model）がノーツを置くタイミングを決め、R2 がレーン・通常ノーツ・ロングノーツを配置して、曲全体でひとつのキャラクターを保ちます。[レポート](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_system.md) · [重み](https://huggingface.co/sed-i/ensomi-r2)（[ONNX 版](https://huggingface.co/sed-i/ensomi-r2/tree/main/onnx)もあり）。譜面の続きを生成する以前のモデル R1 も[公開しています](https://huggingface.co/sed-i/pulsefield-r1-restored)。 |
 | [**ensomi-web**](https://github.com/ensomi-labs/ensomi-web) | [ensomi.app](https://ensomi.app)：ブラウザで動く R2。osu! に持っていく前に、曲に合わせて譜面の流れを確認できるプレイヤー付きです。 |
-| [**ensomi**](https://github.com/ensomi-labs/ensomi) | ゲームクライアント。**Android** は初期の[プレリリース](https://github.com/ensomi-labs/ensomi/releases)で、曲を入れて遊べるほか、*Listen & Play* では音楽アプリで曲を認識すると、ensomi が聞こえた位置から合流します。**macOS・iOS**（[`dev/swift`](https://github.com/ensomi-labs/ensomi/tree/dev/swift)）では、*Generate a Chart* で、手元にある曲から R2 で譜面を生成して遊べます。*Listen & Play* では、聞こえてきた曲を認識し、同期をとって、生成した譜面で遊べます。 |
+| [**ensomi-app**](https://github.com/ensomi-labs/ensomi-app) | ゲームクライアント。**Android** は初期の[プレリリース](https://github.com/ensomi-labs/ensomi-app/releases)で、曲を入れて遊べるほか、*Listen & Play* では音楽アプリで曲を認識すると、ensomi が聞こえた位置から合流します。**macOS・iOS**（[`dev/swift`](https://github.com/ensomi-labs/ensomi-app/tree/dev/swift)）では、*Generate a Chart* で、手元にある曲から R2 で譜面を生成して遊べます。*Listen & Play* では、聞こえてきた曲を認識し、同期をとって、生成した譜面で遊べます。 |
 | [**runtime**](https://github.com/ensomi-labs/runtime) | すべてのクライアントが共有する、Rust 製の ensomi のコア。ゲームプレイのルール、譜面の読み込み、譜面生成を担います。Swift と npm のパッケージがあります。 |
 | [**sonalign**](https://github.com/ensomi-labs/sonalign) | 同期エンジン。ノイズの多いマイク入力やシステム音声から、既知の曲の再生位置を見つけて追従します。Rust 製で、C と Swift の API があります（[crates.io](https://crates.io/crates/sonalign)）。 |
 | [**beatmap-lens**](https://github.com/ensomi-labs/beatmap-lens) | マッパーと同じ目線で osu!mania の譜面を読むためのツール群。専門家の判断で調整した譜面パターンの語彙 **Foundation concepts**、人の判断と監査済みのエージェントの判断からなるオープンな **[データセット](https://huggingface.co/datasets/sed-i/mania-pattern-annotations)**（今後のスタイル指定の教師データになります）、譜面そのものを根拠として引用する **エージェントハーネス**、音声と一緒に譜面を確認できる **Inspector**、`.osu`・`.osz` を SVG・WebP・GIF に描画する **レンダラー**（[npm](https://www.npmjs.com/package/beatmap-lens)）。 |

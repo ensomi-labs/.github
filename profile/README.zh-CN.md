@@ -9,7 +9,7 @@ ensomi 是音乐与游戏前沿的开放研究，为谱师、玩家，以及所�
 
 在 [ensomi.app](https://ensomi.app) 上，只用浏览器就能生成谱面（歌曲文件不会离开你的电脑）。玩过之后，欢迎 **[告诉我们手感如何](https://github.com/ensomi-labs/ensomi-model/issues/new?template=chart-feedback.yml)**。
 
-想把生成的谱面当游戏来玩，可以试试 **[ensomi 应用](https://github.com/ensomi-labs/ensomi)**：可以安装的早期 [Android 演示版](https://github.com/ensomi-labs/ensomi/releases)，或需要用 Xcode 从源码构建的 [macOS 和 iOS 版](https://github.com/ensomi-labs/ensomi/tree/dev/swift)。欢迎在 [Issues](https://github.com/ensomi-labs/ensomi/issues) 里提想法、改进建议和 bug 报告。
+想把生成的谱面当游戏来玩，可以试试 **[ensomi 应用](https://github.com/ensomi-labs/ensomi-app)**：可以安装的早期 [Android 演示版](https://github.com/ensomi-labs/ensomi-app/releases)，或需要用 Xcode 从源码构建的 [macOS 和 iOS 版](https://github.com/ensomi-labs/ensomi-app/tree/dev/swift)。欢迎在 [Issues](https://github.com/ensomi-labs/ensomi-app/issues) 里提想法、改进建议和 bug 报告。
 
 ## 我们的使命
 
@@ -89,7 +89,7 @@ ensomi 诞生于 osu!mania 社区。它的模型从谱师写的谱面中学习�
 | 玩过生成的谱面，或在编辑器里看过 | [谱面反馈](https://github.com/ensomi-labs/ensomi-model/issues/new?template=chart-feedback.yml)。一句话就够了；如果能附上截图或时间段、`.osu` 文件、歌名和模型名，会更有帮助。 |
 | 对写谱和开发工具（Inspector、渲染器、npm 包）的反馈 | beatmap-lens 的[工具反馈](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=tooling-feedback.yml) |
 | 公开数据集里的标注和你的理解不一样，或数据集有其他问题 | beatmap-lens 的[数据集反馈](https://github.com/ensomi-labs/beatmap-lens/issues/new?template=dataset-feedback.yml) |
-| 对 ensomi 应用（Android、macOS、iOS）的想法、改进建议或 bug | ensomi 的 [Issues](https://github.com/ensomi-labs/ensomi/issues) |
+| 对 ensomi 应用（Android、macOS、iOS）的想法、改进建议或 bug | ensomi-app 的 [Issues](https://github.com/ensomi-labs/ensomi-app/issues) |
 | 希望 ensomi 做的东西、问题、用 ensomi 做的谱面 | [Discussions](https://github.com/orgs/ensomi-labs/discussions)（其他人可以补充，也可以投票支持） |
 | 想参与标注，或者写代码 | Discussions，或 [ensomi-model](https://github.com/ensomi-labs/ensomi-model/blob/main/CONTRIBUTING.md) 和 [beatmap-lens](https://github.com/ensomi-labs/beatmap-lens/blob/main/CONTRIBUTING.md) 的贡献指南 |
 
@@ -103,7 +103,7 @@ ensomi 诞生于 osu!mania 社区。它的模型从谱师写的谱面中学习�
 | --- | --- |
 | [**ensomi-model**](https://github.com/ensomi-labs/ensomi-model) | 模型本体。**Ensomi R2**：时间系统拟合节拍网格，行模型（rows model）决定音符在哪些时间点出现，R2 再安排轨道、单点和长条，并在整首歌中保持一致的风格。[报告](https://github.com/ensomi-labs/ensomi-model/blob/main/docs/research/r2_system.md) · [权重](https://huggingface.co/sed-i/ensomi-r2)（也有 [ONNX 版本](https://huggingface.co/sed-i/ensomi-r2/tree/main/onnx)）。更早的续写模型 R1 也[已公开](https://huggingface.co/sed-i/pulsefield-r1-restored)。 |
 | [**ensomi-web**](https://github.com/ensomi-labs/ensomi-web) | [ensomi.app](https://ensomi.app)：在浏览器里运行的 R2，自带播放器，导入 osu! 之前可以先对着歌曲预览谱面。 |
-| [**ensomi**](https://github.com/ensomi-labs/ensomi) | 游戏客户端。**Android** 是早期[预发布版](https://github.com/ensomi-labs/ensomi/releases)：放入一首歌就能玩；*Listen & Play* 中，你在音乐应用里识别歌曲，ensomi 从它听到的位置加入。**macOS 和 iOS**（[`dev/swift`](https://github.com/ensomi-labs/ensomi/tree/dev/swift)）：*Generate a Chart* 为你电脑上的歌曲生成 R2 谱面来玩；*Listen & Play* 从听到一首歌开始，识别它、锁定同步，再播放生成的谱面。 |
+| [**ensomi-app**](https://github.com/ensomi-labs/ensomi-app) | 游戏客户端。**Android** 是早期[预发布版](https://github.com/ensomi-labs/ensomi-app/releases)：放入一首歌就能玩；*Listen & Play* 中，你在音乐应用里识别歌曲，ensomi 从它听到的位置加入。**macOS 和 iOS**（[`dev/swift`](https://github.com/ensomi-labs/ensomi-app/tree/dev/swift)）：*Generate a Chart* 为你电脑上的歌曲生成 R2 谱面来玩；*Listen & Play* 从听到一首歌开始，识别它、锁定同步，再播放生成的谱面。 |
 | [**runtime**](https://github.com/ensomi-labs/runtime) | 用 Rust 编写的 ensomi 共享核心：游戏规则、谱面来源和谱面生成器，供所有客户端使用，提供 Swift 和 npm 包。 |
 | [**sonalign**](https://github.com/ensomi-labs/sonalign) | 同步引擎。从嘈杂的麦克风或系统音频中，找到并跟踪已知曲目的播放位置。用 Rust 编写，提供 C 和 Swift API（[crates.io](https://crates.io/crates/sonalign)）。 |
 | [**beatmap-lens**](https://github.com/ensomi-labs/beatmap-lens) | 像谱师一样读 osu!mania 谱面的工具：经专家校准的键型词汇 **Foundation concepts**；由人工判断和经审核的智能体判断组成的开放 **[数据集](https://huggingface.co/datasets/sed-i/mania-pattern-annotations)**，将为今后的风格控制提供监督信号；标注以谱面本身为证据的 **智能体工具链（agent harness）**；可以配合音频查看谱面的 **Inspector**；以及把 `.osu`、`.osz` 渲染成 SVG、WebP 或 GIF 的 **渲染器**（[npm](https://www.npmjs.com/package/beatmap-lens)）。 |
